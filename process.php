@@ -1,5 +1,7 @@
 <?php
 
+// TODO: pagination
+
 require_once(WGI_PLUGIN_PATH . 'vendor/autoload.php');
 
 if (!wp_next_scheduled(WGI_CRON)) {
@@ -55,7 +57,6 @@ function wgi_get_repo_term($name, $slug, $description, $url)
         update_term_meta($term['term_id'], 'github_id', $slug);
         return $term['term_id'];
     }
-
 }
 
 function wgi_process_repos($options, $client, $last = true)
